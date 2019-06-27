@@ -2,6 +2,20 @@
   box-sizing: border-box;
 }
 
+@keyframes cursor {
+  0% {
+    border-right: 1px solid #fff
+  }
+
+  50% {
+    border-right: 1px solid #000
+  }
+
+  100% {
+    border-right: 1px solid #fff
+  }
+}
+
 body,
 html {
   min-width: 330px;
@@ -29,7 +43,7 @@ li {
   list-style: none;
 }
 
- /* Section-1 Title & Animation */
+/* Section-1 Title & Animation */
 h1 {
   font-size: 84px;
   font-weight: 700;
@@ -56,18 +70,21 @@ h1 span {
     -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
   }
+
   20% {
     transform: translateY(0);
     opacity: 1;
     -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
   }
+
   80% {
     transform: translateY(0);
     opacity: 1;
     -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
   }
+
   100% {
     transform: translateY(-50px);
     opacity: 0;
@@ -91,7 +108,7 @@ h4 {
 }
 
 p {
-  line-height: 1.5;
+  font-size: 72px;
 }
 
 button {
@@ -279,28 +296,26 @@ button:focus {
   background-color: #fff;
 }
 
-.section-2 > .section-content > div {
+.section-2>.section-content>div {
   width: 49%;
   display: inline-block;
   vertical-align: middle;
   position: relative;
 }
 
-/*
-.section-2 > .section-content > div:first-child {
+.section-2>.section-content>div:first-child {
   text-align: left;
   padding-left: 110px;
 }
 
-.section-2 > .section-content > div:last-child {
+.section-2>.section-content>div:last-child {
   text-align: right;
   padding-right: 80px;
 }
+
 */
 
-
-/* section 2 스크롤 애니메이션
-
+/* section 2 스크롤 애니메이션 */
 .section-2 img {
   -webkit-transform: translateX(100px);
   -moz-transform: translateX(100px);
@@ -328,6 +343,7 @@ button:focus {
   -o-transition: all 0.7s;
   transition: all 0.7s;
 }
+
 .active.section-2 img,
 .active.section-2 .txt {
   -webkit-transform: translateX(0);
@@ -342,7 +358,6 @@ button:focus {
   font-weight: 700;
   margin: 4px 0 24px;
 }
-*/
 
 /* section-3 */
 .section-3 {
@@ -350,23 +365,20 @@ button:focus {
   padding: 120px 24px;
   position: relative;
   background: #4e54c8;
-  background: -webkit-linear-gradient(
-    to right,
-    #8f94fb,
-    #4e54c8
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #8f94fb,
-    #4e54c8
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right,
+      #8f94fb,
+      #4e54c8);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #8f94fb,
+      #4e54c8);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #fff;
 }
 
 .section-3 .section-content {
   text-align: center;
 }
-
 
 .section-3 h2 {
   display: inline-block;
@@ -390,7 +402,6 @@ button:focus {
 .section-3 li:nth-child(2n) {
   margin: 4px 0 28px;
 }
-
 
 .score {
   height: 16px;
@@ -451,5 +462,16 @@ button:focus {
   text-align: center;
 }
 
-.footer p {
+.footer p {}
+
+p.typing-txt {
+  display: none;
+}
+
+.typing {
+  /*       position: absolute;*/
+  display: inline-block;
+  animation-name: cursor;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
 }
